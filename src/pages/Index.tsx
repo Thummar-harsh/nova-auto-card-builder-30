@@ -53,8 +53,20 @@ END:VCARD`;
             <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent animate-pulse"></div>
             <div className="relative z-10">
               {/* Enhanced Logo */}
-              <div className="w-20 h-20 sm:w-24 sm:h-24 bg-white rounded-full mx-auto mb-4 flex items-center justify-center shadow-xl border-4 border-white/20 hover:scale-105 transition-transform duration-300">
-                <span className="text-blue-700 font-bold text-xl sm:text-2xl tracking-wide">NA</span>
+              <div className="w-20 h-20 sm:w-24 sm:h-24 bg-white rounded-full mx-auto mb-4 flex items-center justify-center shadow-xl border-4 border-white/20 hover:scale-105 transition-transform duration-300 overflow-hidden">
+                <img 
+                  src="https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?w=96&h=96&fit=crop&crop=center" 
+                  alt="Nova Auto Logo" 
+                  className="w-full h-full object-cover rounded-full"
+                  onError={(e) => {
+                    // Fallback to text if image fails to load
+                    e.currentTarget.style.display = 'none';
+                    e.currentTarget.nextElementSibling.style.display = 'flex';
+                  }}
+                />
+                <div className="absolute inset-0 hidden items-center justify-center bg-white rounded-full">
+                  <span className="text-blue-700 font-bold text-xl sm:text-2xl tracking-wide">NA</span>
+                </div>
                 <Sparkles className="absolute -top-1 -right-1 w-4 h-4 text-yellow-400 animate-pulse" />
               </div>
               <h1 className="text-3xl sm:text-4xl font-bold mb-3 tracking-wide">Nova Auto</h1>
