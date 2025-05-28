@@ -70,7 +70,7 @@ END:VCARD`;
           <div className="p-4 sm:p-6 space-y-4">
             {/* Primary Action Buttons - Call & WhatsApp */}
             <div className="grid grid-cols-2 gap-3 sm:gap-4 mb-6">
-              <button onClick={handleCall} className="bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 text-white font-bold py-4 sm:py-5 px-4 transition-all duration-300 flex flex-col items-center gap-2 shadow-lg hover:shadow-xl transform hover:-translate-y-1 active:scale-95 group min-h-[60px] sm:min-h-[70px]\n rounded-3xl">
+              <button onClick={handleCall} className="bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 text-white font-bold py-4 px-4 transition-all duration-300 flex flex-col items-center gap-2 shadow-lg hover:shadow-xl transform hover:-translate-y-1 active:scale-95 group min-h-[50px] sm:min-h-[60px]\\n rounded-3xl sm:py-[10px]">
                 <div className="w-8 h-8 sm:w-10 sm:h-10 bg-white/20 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
                   <Phone className="text-white" size={20} />
                 </div>
