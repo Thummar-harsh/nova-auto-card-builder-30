@@ -50,7 +50,7 @@ END:VCARD`;
         <div className="bg-white/95 backdrop-blur-sm rounded-3xl shadow-2xl overflow-hidden border border-white/20 hover:shadow-3xl transition-all duration-500 hover:-translate-y-1">
           {/* Header Section */}
           <div className="bg-gradient-to-r from-blue-600 via-blue-700 to-indigo-700 text-white p-6 sm:p-8 text-center relative overflow-hidden">
-            <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent animate-pulse"></div>
+            <div className="absolute inset-0 bg-gradient-to-r from-transparent via-gray-500/10 to-transparent animate-pulse"></div>
             <div className="relative z-10">
               {/* Enhanced Logo */}
               <div className="w-20 h-20 sm:w-24 sm:h-24 bg-white rounded-full mx-auto mb-4 flex items-center justify-center shadow-xl border-4 border-white/20 hover:scale-105 transition-transform duration-300 overflow-hidden">
