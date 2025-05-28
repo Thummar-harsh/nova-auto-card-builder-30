@@ -1,6 +1,4 @@
-
 import { Phone, Mail, MapPin, Instagram, Facebook, Download, Sparkles, MessageCircle } from 'lucide-react';
-
 const Index = () => {
   const handleSaveContact = () => {
     // Create vCard data
@@ -14,8 +12,9 @@ ADR;TYPE=WORK:;;Rapid Technomat, Shapar - Veraval;Rajkot;Gujarat;;India
 URL:https://www.instagram.com/nova_auto.parts
 NOTE:Strong and reliable parts by Nova Auto. Earthmoving Parts
 END:VCARD`;
-
-    const blob = new Blob([vCard], { type: 'text/vcard' });
+    const blob = new Blob([vCard], {
+      type: 'text/vcard'
+    });
     const url = window.URL.createObjectURL(blob);
     const link = document.createElement('a');
     link.href = url;
@@ -25,29 +24,25 @@ END:VCARD`;
     document.body.removeChild(link);
     window.URL.revokeObjectURL(url);
   };
-
   const handleOpenLocation = () => {
     window.open('https://www.google.com/maps/place/Rapid+Technomach/@22.1483596,70.8018007,17z/data=!3m1!4b1!4m6!3m5!1s0x3958353a80431987:0x572781a6ab2252b3!8m2!3d22.1483596!4d70.8018007!16s%2Fg%2F11twc18h3g?entry=ttu', '_blank');
   };
-
   const handleWhatsApp = () => {
     window.open('https://wa.me/918155018518', '_blank');
   };
-
   const handleCall = () => {
     window.open('tel:+918155018518', '_blank');
   };
-
   const handleEmail = () => {
     window.open('mailto:novaauto@outlook.in', '_blank');
   };
-
-  return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-blue-900 to-indigo-900 flex items-center justify-center p-4 relative overflow-hidden">
+  return <div className="min-h-screen bg-gradient-to-br from-slate-900 via-blue-900 to-indigo-900 flex items-center justify-center p-4 relative overflow-hidden">
       {/* Animated background elements */}
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute -top-1/2 -left-1/2 w-full h-full bg-gradient-to-br from-blue-400/10 to-transparent rounded-full blur-3xl animate-pulse"></div>
-        <div className="absolute -bottom-1/2 -right-1/2 w-full h-full bg-gradient-to-tl from-indigo-400/10 to-transparent rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }}></div>
+        <div className="absolute -bottom-1/2 -right-1/2 w-full h-full bg-gradient-to-tl from-indigo-400/10 to-transparent rounded-full blur-3xl animate-pulse" style={{
+        animationDelay: '1s'
+      }}></div>
       </div>
       
       <div className="max-w-md w-full relative z-10">
@@ -75,10 +70,7 @@ END:VCARD`;
           <div className="p-4 sm:p-6 space-y-4">
             {/* Primary Action Buttons - Call & WhatsApp */}
             <div className="grid grid-cols-2 gap-3 sm:gap-4 mb-6">
-              <button
-                onClick={handleCall}
-                className="bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 text-white font-bold py-4 sm:py-5 px-4 rounded-2xl transition-all duration-300 flex flex-col items-center gap-2 shadow-lg hover:shadow-xl transform hover:-translate-y-1 active:scale-95 group min-h-[80px] sm:min-h-[90px]"
-              >
+              <button onClick={handleCall} className="bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 text-white font-bold py-4 sm:py-5 px-4 transition-all duration-300 flex flex-col items-center gap-2 shadow-lg hover:shadow-xl transform hover:-translate-y-1 active:scale-95 group min-h-[60px] sm:min-h-[70px]\n rounded-3xl">
                 <div className="w-8 h-8 sm:w-10 sm:h-10 bg-white/20 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
                   <Phone className="text-white" size={20} />
                 </div>
@@ -88,10 +80,7 @@ END:VCARD`;
                 </div>
               </button>
               
-              <button
-                onClick={handleWhatsApp}
-                className="bg-gradient-to-r from-[#25D366] to-[#128C7E] hover:from-[#128C7E] hover:to-[#075E54] text-white font-bold py-4 sm:py-5 px-4 rounded-2xl transition-all duration-300 flex flex-col items-center gap-2 shadow-lg hover:shadow-xl transform hover:-translate-y-1 active:scale-95 group min-h-[80px] sm:min-h-[90px]"
-              >
+              <button onClick={handleWhatsApp} className="bg-gradient-to-r from-[#25D366] to-[#128C7E] hover:from-[#128C7E] hover:to-[#075E54] text-white font-bold py-4 sm:py-5 px-4 rounded-2xl transition-all duration-300 flex flex-col items-center gap-2 shadow-lg hover:shadow-xl transform hover:-translate-y-1 active:scale-95 group min-h-[80px] sm:min-h-[90px]">
                 <div className="w-8 h-8 sm:w-10 sm:h-10 bg-white/20 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
                   <MessageCircle className="text-white" size={20} fill="white" />
                 </div>
@@ -103,31 +92,18 @@ END:VCARD`;
             </div>
 
             {/* Save Contact Button */}
-            <button
-              onClick={handleSaveContact}
-              className="w-full bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white font-semibold py-3.5 sm:py-4 px-6 rounded-2xl transition-all duration-300 flex items-center justify-center gap-3 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 active:scale-95 group"
-            >
+            <button onClick={handleSaveContact} className="w-full bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white font-semibold py-3.5 sm:py-4 px-6 rounded-2xl transition-all duration-300 flex items-center justify-center gap-3 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 active:scale-95 group">
               <Download size={20} className="group-hover:rotate-12 transition-transform duration-300" />
               <span className="text-base sm:text-lg">Save Contact</span>
             </button>
 
             {/* Social Media Links */}
             <div className="grid grid-cols-2 gap-3 sm:gap-4">
-              <a
-                href="https://www.instagram.com/nova_auto.parts"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="bg-gradient-to-r from-pink-500 to-purple-600 hover:from-pink-600 hover:to-purple-700 text-white font-medium py-3 sm:py-4 px-4 rounded-2xl transition-all duration-300 flex items-center justify-center gap-2 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 active:scale-95 group"
-              >
+              <a href="https://www.instagram.com/nova_auto.parts" target="_blank" rel="noopener noreferrer" className="bg-gradient-to-r from-pink-500 to-purple-600 hover:from-pink-600 hover:to-purple-700 text-white font-medium py-3 sm:py-4 px-4 rounded-2xl transition-all duration-300 flex items-center justify-center gap-2 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 active:scale-95 group">
                 <Instagram size={18} className="group-hover:scale-110 transition-transform duration-300" />
                 <span className="font-semibold text-sm sm:text-base">Instagram</span>
               </a>
-              <a
-                href="https://www.facebook.com/nova.auto.2025"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white font-medium py-3 sm:py-4 px-4 rounded-2xl transition-all duration-300 flex items-center justify-center gap-2 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 active:scale-95 group"
-              >
+              <a href="https://www.facebook.com/nova.auto.2025" target="_blank" rel="noopener noreferrer" className="bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white font-medium py-3 sm:py-4 px-4 rounded-2xl transition-all duration-300 flex items-center justify-center gap-2 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 active:scale-95 group">
                 <Facebook size={18} className="group-hover:scale-110 transition-transform duration-300" />
                 <span className="font-semibold text-sm sm:text-base">Facebook</span>
               </a>
@@ -143,10 +119,7 @@ END:VCARD`;
             </div>
             
             {/* Location */}
-            <button
-              onClick={handleOpenLocation}
-              className="w-full bg-gradient-to-r from-gray-50 to-gray-100 hover:from-gray-100 hover:to-gray-200 border border-gray-200 hover:border-gray-300 rounded-xl sm:rounded-2xl p-4 sm:p-5 transition-all duration-300 flex items-start gap-3 sm:gap-4 text-left group shadow-sm hover:shadow-md transform hover:-translate-y-0.5"
-            >
+            <button onClick={handleOpenLocation} className="w-full bg-gradient-to-r from-gray-50 to-gray-100 hover:from-gray-100 hover:to-gray-200 border border-gray-200 hover:border-gray-300 rounded-xl sm:rounded-2xl p-4 sm:p-5 transition-all duration-300 flex items-start gap-3 sm:gap-4 text-left group shadow-sm hover:shadow-md transform hover:-translate-y-0.5">
               <div className="w-8 h-8 sm:w-10 sm:h-10 bg-red-100 rounded-full flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform duration-300">
                 <MapPin className="text-red-600" size={18} />
               </div>
@@ -157,10 +130,7 @@ END:VCARD`;
             </button>
 
             {/* Email */}
-            <button
-              onClick={handleEmail}
-              className="w-full bg-gradient-to-r from-blue-50 to-indigo-50 hover:from-blue-100 hover:to-indigo-100 border border-blue-200 hover:border-blue-300 rounded-xl sm:rounded-2xl p-4 sm:p-5 transition-all duration-300 flex items-center gap-3 sm:gap-4 group shadow-sm hover:shadow-md transform hover:-translate-y-0.5"
-            >
+            <button onClick={handleEmail} className="w-full bg-gradient-to-r from-blue-50 to-indigo-50 hover:from-blue-100 hover:to-indigo-100 border border-blue-200 hover:border-blue-300 rounded-xl sm:rounded-2xl p-4 sm:p-5 transition-all duration-300 flex items-center gap-3 sm:gap-4 group shadow-sm hover:shadow-md transform hover:-translate-y-0.5">
               <div className="w-8 h-8 sm:w-10 sm:h-10 bg-blue-100 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
                 <Mail className="text-blue-600" size={18} />
               </div>
@@ -182,8 +152,6 @@ END:VCARD`;
           </div>
         </div>
       </div>
-    </div>
-  );
+    </div>;
 };
-
 export default Index;
