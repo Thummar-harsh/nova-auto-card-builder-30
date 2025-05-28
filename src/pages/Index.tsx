@@ -54,11 +54,11 @@ END:VCARD`;
             <div className="relative z-10">
               {/* Enhanced Logo */}
               <div className="w-20 h-20 sm:w-24 sm:h-24 bg-white rounded-full mx-auto mb-4 flex items-center justify-center shadow-xl border-4 border-white/20 hover:scale-105 transition-transform duration-300 overflow-hidden">
-                <img alt="Nova Auto Logo" className="w-full h-full object-cover rounded-full" onError={e => {
+                <img alt="Nova Auto Logo" onError={e => {
                 // Fallback to text if image fails to load
                 e.currentTarget.style.display = 'none';
                 e.currentTarget.nextElementSibling.style.display = 'flex';
-              }} src="/lovable-uploads/58ad1f24-4096-4df6-9667-b55ed083887c.jpg" />
+              }} className="w-full h-full rounded-full object-scale-down" src="/lovable-uploads/d0e42aac-604d-4531-b296-25ead1fedd06.jpg" />
                 <div className="absolute inset-0 hidden items-center justify-center bg-white rounded-full">
                   <span className="text-blue-700 font-bold text-xl sm:text-2xl tracking-wide">NA</span>
                 </div>
