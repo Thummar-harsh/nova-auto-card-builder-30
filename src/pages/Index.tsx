@@ -80,7 +80,7 @@ END:VCARD`;
                 </div>
               </button>
               
-              <button onClick={handleWhatsApp} className="bg-gradient-to-r from-[#25D366] to-[#128C7E] hover:from-[#128C7E] hover:to-[#075E54] text-white font-bold py-4 sm:py-5 px-4 rounded-2xl transition-all duration-300 flex flex-col items-center gap-2 shadow-lg hover:shadow-xl transform hover:-translate-y-1 active:scale-95 group min-h-[80px] sm:min-h-[90px]">
+              <button onClick={handleWhatsApp} className="bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 text-white font-bold py-4 px-4 transition-all duration-300 flex flex-col items-center gap-2 shadow-lg hover:shadow-xl transform hover:-translate-y-1 active:scale-95 group min-h-[50px] sm:min-h-[60px] rounded-3xl sm:py-[10px]">
                 <div className="w-8 h-8 sm:w-10 sm:h-10 bg-white/20 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
                   <MessageCircle className="text-white" size={20} fill="white" />
                 </div>
