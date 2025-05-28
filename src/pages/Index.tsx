@@ -1,5 +1,4 @@
-
-import { Phone, Mail, MapPin, Instagram, Facebook, Download, Sparkles } from 'lucide-react';
+import { Phone, Mail, MapPin, Instagram, Facebook, Download, Sparkles, MessageCircle } from 'lucide-react';
 
 const Index = () => {
   const handleSaveContact = () => {
@@ -146,7 +145,7 @@ END:VCARD`;
                 className="bg-gradient-to-r from-green-50 to-emerald-50 hover:from-green-100 hover:to-emerald-100 border border-green-200 hover:border-green-300 rounded-2xl p-4 transition-all duration-300 flex items-center gap-3 group shadow-sm hover:shadow-md transform hover:-translate-y-0.5"
               >
                 <div className="w-10 h-10 bg-green-500 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                  <span className="text-white text-sm font-bold">W</span>
+                  <MessageCircle className="text-white" size={18} />
                 </div>
                 <div className="text-left">
                   <p className="text-gray-800 font-semibold text-sm">WhatsApp</p>
