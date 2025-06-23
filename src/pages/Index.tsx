@@ -1,12 +1,29 @@
 import { Phone, Mail, MapPin, Instagram, Facebook, Download, Sparkles, MessageCircle } from 'lucide-react';
+import { useState, useEffect } from 'react';
+import LoadingScreen from '../components/LoadingScreen';
+
 const Index = () => {
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    // Simulate loading time
+    const timer = setTimeout(() => {
+      setIsLoading(false);
+    }, 3000);
+
+    return () => clearTimeout(timer);
+  }, []);
+
   const handleSaveContact = () => {
-    // Create vCard data
+    // Create vCard data with all phone numbers
     const vCard = `BEGIN:VCARD
 VERSION:3.0
 FN:Nova Auto
-ORG:Nova Auto
+ORG:Rapid Technomach
 TEL;TYPE=WORK,VOICE:+918155018518
+TEL;TYPE=CELL:+918140251789
+TEL;TYPE=CELL:+917211175160
+TEL;TYPE=CELL:+918200005641
 EMAIL;TYPE=WORK:novaauto@outlook.in
 ADR;TYPE=WORK:;;Rapid Technomat, Shapar - Veraval;Rajkot;Gujarat;;India
 URL:https://www.instagram.com/nova_auto.parts
@@ -24,6 +41,7 @@ END:VCARD`;
     document.body.removeChild(link);
     window.URL.revokeObjectURL(url);
   };
+
   const handleOpenLocation = () => {
     window.open('https://www.google.com/maps/place/Rapid+Technomach/@22.1483596,70.8018007,17z/data=!3m1!4b1!4m6!3m5!1s0x3958353a80431987:0x572781a6ab2252b3!8m2!3d22.1483596!4d70.8018007!16s%2Fg%2F11twc18h3g?entry=ttu', '_blank');
   };
@@ -36,6 +54,11 @@ END:VCARD`;
   const handleEmail = () => {
     window.open('mailto:novaauto@outlook.in', '_blank');
   };
+
+  if (isLoading) {
+    return <LoadingScreen />;
+  }
+
   return <div className="min-h-screen bg-gradient-to-br from-slate-900 via-blue-900 to-indigo-900 flex items-center justify-center p-4 relative overflow-hidden">
       {/* Animated background elements */}
       <div className="absolute inset-0 overflow-hidden">
@@ -69,7 +92,7 @@ END:VCARD`;
               </div>
               <h1 className="text-3xl sm:text-4xl font-bold mb-3 tracking-wide">Nova Auto</h1>
               <div className="w-12 h-0.5 bg-white/60 mx-auto mb-3"></div>
-              <p className="text-blue-100 text-sm sm:text-base font-medium mb-2 leading-relaxed">Strong and reliable parts by Nova Auto.</p>
+              <p className="text-blue-100 text-sm sm:text-base font-medium mb-2 leading-relaxed">Rapid Technomach</p>
               <div className="inline-block bg-white/20 backdrop-blur-sm px-3 py-1.5 sm:px-4 sm:py-2 rounded-full">
                 <p className="text-blue-100 text-xs sm:text-sm font-semibold uppercase tracking-wider">Earthmoving Parts</p>
               </div>
@@ -149,6 +172,25 @@ END:VCARD`;
                 <p className="text-gray-600 text-xs sm:text-sm">novaauto@outlook.in</p>
               </div>
             </button>
+
+            {/* Additional Phone Numbers */}
+            <div className="space-y-2">
+              <h4 className="text-gray-700 font-medium text-sm">Additional Contact Numbers:</h4>
+              <div className="grid grid-cols-1 gap-2 text-xs text-gray-600">
+                <div className="flex items-center gap-2">
+                  <Phone size={14} className="text-gray-500" />
+                  <span>+91 81402 51789</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <Phone size={14} className="text-gray-500" />
+                  <span>+91 72111 75160</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <Phone size={14} className="text-gray-500" />
+                  <span>+91 82000 05641</span>
+                </div>
+              </div>
+            </div>
           </div>
 
           {/* Enhanced Footer */}
@@ -164,4 +206,5 @@ END:VCARD`;
       </div>
     </div>;
 };
+
 export default Index;
