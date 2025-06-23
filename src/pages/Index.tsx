@@ -1,12 +1,9 @@
-
 import { Phone, Mail, MapPin, Instagram, Facebook, Download, Sparkles, MessageCircle, Star, ArrowRight, Building2, Users, Award } from 'lucide-react';
 import { useState, useEffect } from 'react';
 import LoadingScreen from '../components/LoadingScreen';
-
 const Index = () => {
   const [isLoading, setIsLoading] = useState(true);
   const [showContent, setShowContent] = useState(false);
-
   useEffect(() => {
     // Simulate loading time
     const timer = setTimeout(() => {
@@ -14,10 +11,8 @@ const Index = () => {
       // Add staggered animation for content
       setTimeout(() => setShowContent(true), 200);
     }, 3000);
-
     return () => clearTimeout(timer);
   }, []);
-
   const handleSaveContact = () => {
     // Create vCard data with all phone numbers
     const vCard = `BEGIN:VCARD
@@ -45,7 +40,6 @@ END:VCARD`;
     document.body.removeChild(link);
     window.URL.revokeObjectURL(url);
   };
-
   const handleOpenLocation = () => {
     window.open('https://www.google.com/maps/place/Rapid+Technomach/@22.1483596,70.8018007,17z/data=!3m1!4b1!4m6!3m5!1s0x3958353a80431987:0x572781a6ab2252b3!8m2!3d22.1483596!4d70.8018007!16s%2Fg%2F11twc18h3g?entry=ttu', '_blank');
   };
@@ -58,13 +52,10 @@ END:VCARD`;
   const handleEmail = () => {
     window.open('mailto:novaauto@outlook.in', '_blank');
   };
-
   if (isLoading) {
     return <LoadingScreen />;
   }
-
-  return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50 flex items-center justify-center p-4 relative overflow-hidden">
+  return <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50 flex items-center justify-center p-4 relative overflow-hidden">
       {/* Professional background elements */}
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute top-0 right-0 w-96 h-96 bg-gradient-to-bl from-blue-100/40 to-transparent rounded-full blur-3xl"></div>
@@ -85,18 +76,13 @@ END:VCARD`;
             <div className="relative z-10">
               {/* Professional Logo */}
               <div className="w-24 h-24 bg-white rounded-xl mx-auto mb-6 flex items-center justify-center shadow-lg border border-gray-200 hover:scale-105 transition-all duration-500 overflow-hidden group relative">
-                <img 
-                  alt="Nova Auto Logo" 
-                  onError={(e) => {
-                    e.currentTarget.style.display = 'none';
-                    const fallback = e.currentTarget.nextElementSibling as HTMLElement;
-                    if (fallback) {
-                      fallback.style.display = 'flex';
-                    }
-                  }} 
-                  className="w-full h-full rounded-xl object-scale-down" 
-                  src="/lovable-uploads/d0e42aac-604d-4531-b296-25ead1fedd06.jpg" 
-                />
+                <img alt="Nova Auto Logo" onError={e => {
+                e.currentTarget.style.display = 'none';
+                const fallback = e.currentTarget.nextElementSibling as HTMLElement;
+                if (fallback) {
+                  fallback.style.display = 'flex';
+                }
+              }} className="w-full h-full rounded-xl object-scale-down" src="/lovable-uploads/d0e42aac-604d-4531-b296-25ead1fedd06.jpg" />
                 <div className="absolute inset-0 hidden items-center justify-center bg-white rounded-xl">
                   <span className="text-slate-700 font-bold text-2xl tracking-wide">NA</span>
                 </div>
@@ -112,7 +98,7 @@ END:VCARD`;
                 <p className="text-blue-100 text-lg font-medium mb-4">Rapid Technomach</p>
                 <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm px-4 py-2 rounded-lg border border-white/20">
                   <Award className="w-4 h-4 text-blue-200" />
-                  <p className="text-blue-100 text-sm font-medium uppercase tracking-wide">Professional Earthmoving Parts</p>
+                  <p className="text-blue-100 text-sm font-medium uppercase tracking-wide">EARTHMOVING PARTS</p>
                 </div>
               </div>
             </div>
@@ -122,10 +108,7 @@ END:VCARD`;
           <div className="p-8 space-y-6">
             {/* Primary Contact Actions */}
             <div className="grid grid-cols-2 gap-4 mb-8">
-              <button 
-                onClick={handleCall} 
-                className="bg-gradient-to-r from-emerald-600 to-emerald-700 hover:from-emerald-700 hover:to-emerald-800 text-white font-semibold py-4 px-4 transition-all duration-300 flex flex-col items-center gap-3 shadow-lg hover:shadow-xl transform hover:-translate-y-1 active:scale-95 group rounded-xl"
-              >
+              <button onClick={handleCall} className="bg-gradient-to-r from-emerald-600 to-emerald-700 hover:from-emerald-700 hover:to-emerald-800 text-white font-semibold py-4 px-4 transition-all duration-300 flex flex-col items-center gap-3 shadow-lg hover:shadow-xl transform hover:-translate-y-1 active:scale-95 group rounded-xl">
                 <div className="w-12 h-12 bg-white/20 rounded-lg flex items-center justify-center group-hover:scale-110 transition-all duration-300">
                   <Phone className="text-white w-5 h-5" />
                 </div>
@@ -135,10 +118,7 @@ END:VCARD`;
                 </div>
               </button>
               
-              <button 
-                onClick={handleWhatsApp} 
-                className="bg-gradient-to-r from-green-600 to-green-700 hover:from-green-700 hover:to-green-800 text-white font-semibold py-4 px-4 transition-all duration-300 flex flex-col items-center gap-3 shadow-lg hover:shadow-xl transform hover:-translate-y-1 active:scale-95 group rounded-xl"
-              >
+              <button onClick={handleWhatsApp} className="bg-gradient-to-r from-green-600 to-green-700 hover:from-green-700 hover:to-green-800 text-white font-semibold py-4 px-4 transition-all duration-300 flex flex-col items-center gap-3 shadow-lg hover:shadow-xl transform hover:-translate-y-1 active:scale-95 group rounded-xl">
                 <div className="w-12 h-12 bg-white/20 rounded-lg flex items-center justify-center group-hover:scale-110 transition-all duration-300">
                   <MessageCircle className="text-white w-5 h-5" fill="white" />
                 </div>
@@ -150,10 +130,7 @@ END:VCARD`;
             </div>
 
             {/* Professional Save Contact Button */}
-            <button 
-              onClick={handleSaveContact} 
-              className="w-full bg-gradient-to-r from-slate-700 to-slate-800 hover:from-slate-800 hover:to-slate-900 text-white font-semibold py-4 px-6 rounded-xl transition-all duration-300 flex items-center justify-center gap-3 shadow-lg hover:shadow-xl transform hover:-translate-y-1 active:scale-95 group"
-            >
+            <button onClick={handleSaveContact} className="w-full bg-gradient-to-r from-slate-700 to-slate-800 hover:from-slate-800 hover:to-slate-900 text-white font-semibold py-4 px-6 rounded-xl transition-all duration-300 flex items-center justify-center gap-3 shadow-lg hover:shadow-xl transform hover:-translate-y-1 active:scale-95 group">
               <Download size={20} className="group-hover:rotate-12 transition-transform duration-300" />
               <span className="text-lg">Save Contact</span>
               <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform duration-300" />
@@ -161,21 +138,11 @@ END:VCARD`;
 
             {/* Professional Social Media Links */}
             <div className="grid grid-cols-2 gap-4">
-              <a 
-                href="https://www.instagram.com/nova_auto.parts" 
-                target="_blank" 
-                rel="noopener noreferrer" 
-                className="bg-gradient-to-r from-rose-500 to-pink-600 hover:from-rose-600 hover:to-pink-700 text-white font-medium py-4 px-4 rounded-xl transition-all duration-300 flex items-center justify-center gap-3 shadow-lg hover:shadow-xl transform hover:-translate-y-1 active:scale-95 group"
-              >
+              <a href="https://www.instagram.com/nova_auto.parts" target="_blank" rel="noopener noreferrer" className="bg-gradient-to-r from-rose-500 to-pink-600 hover:from-rose-600 hover:to-pink-700 text-white font-medium py-4 px-4 rounded-xl transition-all duration-300 flex items-center justify-center gap-3 shadow-lg hover:shadow-xl transform hover:-translate-y-1 active:scale-95 group">
                 <Instagram size={18} className="group-hover:scale-110 transition-transform duration-300" />
                 <span className="font-medium text-sm">Instagram</span>
               </a>
-              <a 
-                href="https://www.facebook.com/nova.auto.2025" 
-                target="_blank" 
-                rel="noopener noreferrer" 
-                className="bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white font-medium py-4 px-4 rounded-xl transition-all duration-300 flex items-center justify-center gap-3 shadow-lg hover:shadow-xl transform hover:-translate-y-1 active:scale-95 group"
-              >
+              <a href="https://www.facebook.com/nova.auto.2025" target="_blank" rel="noopener noreferrer" className="bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white font-medium py-4 px-4 rounded-xl transition-all duration-300 flex items-center justify-center gap-3 shadow-lg hover:shadow-xl transform hover:-translate-y-1 active:scale-95 group">
                 <Facebook size={18} className="group-hover:scale-110 transition-transform duration-300" />
                 <span className="font-medium text-sm">Facebook</span>
               </a>
@@ -194,10 +161,7 @@ END:VCARD`;
             </div>
             
             {/* Professional Location */}
-            <button 
-              onClick={handleOpenLocation} 
-              className="w-full bg-gray-50 hover:bg-gray-100 border border-gray-200 hover:border-gray-300 rounded-xl p-5 transition-all duration-300 flex items-start gap-4 text-left group shadow-sm hover:shadow-md transform hover:-translate-y-0.5"
-            >
+            <button onClick={handleOpenLocation} className="w-full bg-gray-50 hover:bg-gray-100 border border-gray-200 hover:border-gray-300 rounded-xl p-5 transition-all duration-300 flex items-start gap-4 text-left group shadow-sm hover:shadow-md transform hover:-translate-y-0.5">
               <div className="w-12 h-12 bg-red-100 rounded-lg flex items-center justify-center flex-shrink-0 group-hover:scale-105 transition-all duration-300">
                 <MapPin className="text-red-600 w-5 h-5" />
               </div>
@@ -211,10 +175,7 @@ END:VCARD`;
             </button>
 
             {/* Professional Email */}
-            <button 
-              onClick={handleEmail} 
-              className="w-full bg-blue-50 hover:bg-blue-100 border border-blue-200 hover:border-blue-300 rounded-xl p-5 transition-all duration-300 flex items-center gap-4 group shadow-sm hover:shadow-md transform hover:-translate-y-0.5"
-            >
+            <button onClick={handleEmail} className="w-full bg-blue-50 hover:bg-blue-100 border border-blue-200 hover:border-blue-300 rounded-xl p-5 transition-all duration-300 flex items-center gap-4 group shadow-sm hover:shadow-md transform hover:-translate-y-0.5">
               <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center group-hover:scale-105 transition-all duration-300">
                 <Mail className="text-blue-600 w-5 h-5" />
               </div>
@@ -267,8 +228,6 @@ END:VCARD`;
           </div>
         </div>
       </div>
-    </div>
-  );
+    </div>;
 };
-
 export default Index;
