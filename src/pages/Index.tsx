@@ -1,3 +1,4 @@
+
 import { Phone, Mail, MapPin, Instagram, Facebook, Download, Sparkles, MessageCircle } from 'lucide-react';
 import { useState, useEffect } from 'react';
 import LoadingScreen from '../components/LoadingScreen';
@@ -20,8 +21,8 @@ const Index = () => {
 VERSION:3.0
 FN:Nova Auto
 ORG:Rapid Technomach
-TEL;TYPE=WORK,VOICE:+918155018518
-TEL;TYPE=CELL:+918140251789
+TEL;TYPE=WORK,VOICE:+918140251789
+TEL;TYPE=CELL:+918155018518
 TEL;TYPE=CELL:+917211175160
 TEL;TYPE=CELL:+918200005641
 EMAIL;TYPE=WORK:novaauto@outlook.in
@@ -46,10 +47,10 @@ END:VCARD`;
     window.open('https://www.google.com/maps/place/Rapid+Technomach/@22.1483596,70.8018007,17z/data=!3m1!4b1!4m6!3m5!1s0x3958353a80431987:0x572781a6ab2252b3!8m2!3d22.1483596!4d70.8018007!16s%2Fg%2F11twc18h3g?entry=ttu', '_blank');
   };
   const handleWhatsApp = () => {
-    window.open('https://wa.me/918155018518', '_blank');
+    window.open('https://wa.me/918140251789', '_blank');
   };
   const handleCall = () => {
-    window.open('tel:+918155018518', '_blank');
+    window.open('tel:+918140251789', '_blank');
   };
   const handleEmail = () => {
     window.open('mailto:novaauto@outlook.in', '_blank');
@@ -109,7 +110,7 @@ END:VCARD`;
                 </div>
                 <div className="text-center">
                   <p className="text-white font-bold text-sm sm:text-base">Call Now</p>
-                  <p className="text-green-100 text-xs font-medium">+91 81550 18518</p>
+                  <p className="text-green-100 text-xs font-medium">+91 81402 51789</p>
                 </div>
               </button>
               
@@ -119,7 +120,7 @@ END:VCARD`;
                 </div>
                 <div className="text-center">
                   <p className="text-white font-bold text-sm sm:text-base">WhatsApp</p>
-                  <p className="text-green-100 text-xs font-medium">+91 81550 18518</p>
+                  <p className="text-green-100 text-xs font-medium">+91 81402 51789</p>
                 </div>
               </button>
             </div>
@@ -179,7 +180,7 @@ END:VCARD`;
               <div className="grid grid-cols-1 gap-2 text-xs text-gray-600">
                 <div className="flex items-center gap-2">
                   <Phone size={14} className="text-gray-500" />
-                  <span>+91 81402 51789</span>
+                  <span>+91 81550 18518</span>
                 </div>
                 <div className="flex items-center gap-2">
                   <Phone size={14} className="text-gray-500" />
