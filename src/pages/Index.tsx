@@ -1,4 +1,5 @@
 import { Phone, Mail, MapPin, Instagram, Facebook, Download, Sparkles, MessageCircle, Star, ArrowRight, Building2, Users, Award } from 'lucide-react';
+import { Phone, Mail, MapPin, Instagram, Facebook, Download, Sparkles, MessageCircle, Star, ArrowRight, Building2, Users, Award, FileText, ExternalLink } from 'lucide-react';
 import { useState, useEffect } from 'react';
 import LoadingScreen from '../components/LoadingScreen';
 const Index = () => {
@@ -51,6 +52,10 @@ END:VCARD`;
   };
   const handleEmail = () => {
     window.open('mailto:novaauto@outlook.in', '_blank');
+  };
+
+  const handleViewCatalog = () => {
+    window.open('https://drive.google.com/file/d/18psmsUjVd56M8x71f5mivT8QDntspb98/view?usp=drivesdk', '_blank');
   };
   if (isLoading) {
     return <LoadingScreen />;
@@ -134,6 +139,13 @@ END:VCARD`;
               <Download size={20} className="group-hover:rotate-12 transition-transform duration-300" />
               <span className="text-lg">Save Contact</span>
               <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform duration-300" />
+            </button>
+
+            {/* Professional Catalog Button */}
+            <button onClick={handleViewCatalog} className="w-full bg-gradient-to-r from-amber-600 to-orange-600 hover:from-amber-700 hover:to-orange-700 text-white font-semibold py-4 px-6 rounded-xl transition-all duration-300 flex items-center justify-center gap-3 shadow-lg hover:shadow-xl transform hover:-translate-y-1 active:scale-95 group">
+              <FileText size={20} className="group-hover:scale-110 transition-transform duration-300" />
+              <span className="text-lg">View Catalog</span>
+              <ExternalLink size={16} className="group-hover:translate-x-1 transition-transform duration-300" />
             </button>
 
             {/* Professional Social Media Links */}
