@@ -1,4 +1,3 @@
-import { Phone, Mail, MapPin, Instagram, Facebook, Download, Sparkles, MessageCircle, Star, ArrowRight, Building2, Users, Award } from 'lucide-react';
 import { Phone, Mail, MapPin, Instagram, Facebook, Download, Sparkles, MessageCircle, Star, ArrowRight, Building2, Users, Award, FileText, ExternalLink } from 'lucide-react';
 import { useState, useEffect } from 'react';
 import LoadingScreen from '../components/LoadingScreen';
